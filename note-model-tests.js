@@ -29,3 +29,19 @@
   };
   testReturnText();
 })(this);
+
+(function(exports){
+  function testListNotes(){
+    var list = new List();
+    if(list.notes.length != 0 ){
+      throw new Error ("Note has not initialized correctly!");
+    } else {
+      try {
+        throw "Array test passed"
+      } catch(e){
+        alert(e)
+      }
+    }
+  };
+  testListNotes();
+})(this);
