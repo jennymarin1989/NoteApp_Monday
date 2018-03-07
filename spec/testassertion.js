@@ -3,7 +3,7 @@
 
     isTrue: function(paramToCheck) {
       if(!paramToCheck) {
-        throw new Error ("Please check your code" + infoToCheck + "is not true");
+        throw new Error (`Please check your code ${paramToCheck} is not true`);
       } else {
         console.log("Easy Peasy!!");
       }
@@ -16,4 +16,12 @@
         console.log("Easy Peasy!!");
       }
     }
+  }
+
+  var describe = function(string){
+    console.log("-------" + string + "-------");
+  };
+
+  var it = function(string){
+    console.log("  " + string );
   }
