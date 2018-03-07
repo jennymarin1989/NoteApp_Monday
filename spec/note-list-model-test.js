@@ -2,19 +2,25 @@
   var note1 = new Note("My first Note");
   var note2 = new Note("My second Note");
 
+  beforeEach(function() {
+    var list = new List();
+  });
+
   emptyListArray();
   getAllNotes();
   AddNoteinList();
 
+
+
   function emptyListArray(){
-    var list = new List();
+    // var list = new List();
     describe("new list");
     it("initialize with a empty list");
     expect.isTrue(list.notes.length === 0);
   };
 
   function AddNoteinList(){
-    var list = new List();
+    // var list = new List();
     describe("add note to list");
     it("Adds a note to the list");
     list.addNoteToList("My first note");
@@ -22,7 +28,7 @@
   };
 
   function getAllNotes(){
-    var list = new List ();
+    // var list = new List ();
     describe("get all notes");
     it("returns an array of all notes");
     list.notes.push(note1);

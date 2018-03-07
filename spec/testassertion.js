@@ -1,7 +1,11 @@
 
+var beforeEachFunctions;
+
   var expect = {
 
     isTrue: function(paramToCheck) {
+      beforeEach(beforeEach.beforeEachFunctions);
+      console.log("BeforeEach Functions: " + beforeEach.beforeEachFunctions)
       if(!paramToCheck) {
         throw new Error (`Please check your code ${paramToCheck} is not true`);
       } else {
@@ -10,6 +14,7 @@
     },
 
     isEqual: function(paramToCheck, beEqual){
+      beforeEach();
       if (Array.isArray(paramToCheck)) {
         if (!Array.isArray(beEqual)) {
           throw new Error (`${paramToCheck} is an array but expected to equal ${beEqual}`)
@@ -39,4 +44,12 @@
 
   var it = function(string){
     console.log("  " + string );
-  }
+  };
+
+  var beforeEach = function(callback) {
+    this.beforeEachFunctions = callback;
+    if (callback) {
+      console.log("Hello " + beforeEachFunctions)
+      callback();
+    }
+  };
