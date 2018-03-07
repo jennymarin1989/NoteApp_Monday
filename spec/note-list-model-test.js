@@ -15,3 +15,10 @@
     expect.isTrue(list.notes.includes("My first note"));
   };
   AddNoteinList();
+
+
+  function getAllNotes(){
+    var list = new List ();
+    list.addNoteToList
+
+  }
