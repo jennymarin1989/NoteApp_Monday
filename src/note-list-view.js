@@ -8,7 +8,6 @@
   ListView.prototype.createView = function() {
     var string = "<ul>";
     var listArray = this.notelist.getAllNotes();
-    console.log(listArray[1])
 
     if(listArray.length === 0){
       return string = "<div>No notes have been added yet</div>"
