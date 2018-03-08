@@ -1,11 +1,8 @@
 
-var beforeEachFunctions;
 
   var expect = {
 
     isTrue: function(paramToCheck) {
-      beforeEach(beforeEach.beforeEachFunctions);
-      console.log("BeforeEach Functions: " + beforeEach.beforeEachFunctions)
       if(!paramToCheck) {
         throw new Error (`Please check your code ${paramToCheck} is not true`);
       } else {
@@ -14,7 +11,6 @@ var beforeEachFunctions;
     },
 
     isEqual: function(paramToCheck, beEqual){
-      beforeEach();
       if (Array.isArray(paramToCheck)) {
         if (!Array.isArray(beEqual)) {
           throw new Error (`${paramToCheck} is an array but expected to equal ${beEqual}`)
@@ -27,7 +23,7 @@ var beforeEachFunctions;
             }
           }
         }
-        console.log("Easy Peasy!!");
+        console.log("%cTest passed! Easy Peasy!!", "color: green; font-size: 15px;");
       } else {
         if(paramToCheck !== beEqual){
           throw new Error (`Try Again!${beEqual} does not equal ${paramToCheck}`)
@@ -43,12 +39,12 @@ var beforeEachFunctions;
   };
 
   var it = function(string){
+    beforeEach();
     console.log("  " + string );
   };
 
   var beforeEach = function(callback) {
-    beforeEachFunctions = callback;
     if (callback) {
-      callback();
+        callback();
     }
   };
