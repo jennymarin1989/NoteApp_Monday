@@ -9,7 +9,7 @@ var beforeEachFunctions;
       if(!paramToCheck) {
         throw new Error (`Please check your code ${paramToCheck} is not true`);
       } else {
-        console.log("Easy Peasy!!");
+        console.log("Test passed! Easy Peasy!!");
       }
     },
 
@@ -30,9 +30,9 @@ var beforeEachFunctions;
         console.log("Easy Peasy!!");
       } else {
         if(paramToCheck !== beEqual){
-          throw new Error (`Try Again!${beEqual} is not equal to ${paramToCheck}`)
+          throw new Error (`Try Again!${beEqual} does not equal ${paramToCheck}`)
         } else {
-          console.log("Easy Peasy!!");
+          console.log("%cTest passed! Easy Peasy!!", "color: green; font-size: 15px;");
         }
       }
     }
@@ -47,9 +47,8 @@ var beforeEachFunctions;
   };
 
   var beforeEach = function(callback) {
-    this.beforeEachFunctions = callback;
+    beforeEachFunctions = callback;
     if (callback) {
-      console.log("Hello " + beforeEachFunctions)
       callback();
     }
   };
